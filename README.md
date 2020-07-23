@@ -5,17 +5,20 @@ You’ll need the following:
 
 2.gcloud installed, up-to-date, logged in, and connected to your project.
   for cloud sdk installation  - 
-  # *Refer link -https://cloud.google.com/sdk/install
+  *Refer link -https://cloud.google.com/sdk/install
 
 3. All required Google Cloud APIs enabled
 
 > gcloud components update
+
 > gcloud auth login
+
 > gcloud config set project <my-project>
+
 > gcloud config list
   
 4.Make sure you have update version of terraform installed terraform 12.28
-# *Refer link - https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+ *Refer link - https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
 
    1.Download the file and Unzip it
 
