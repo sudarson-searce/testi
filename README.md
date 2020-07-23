@@ -1,11 +1,27 @@
-#Prerequisites
+# Prerequisites
 You’ll need the following:
+
 1.A GCP project
+
 2.gcloud installed, up-to-date, logged in, and connected to your project.
-  for cloud sdk installation  
-  refer link -https://cloud.google.com/sdk/install
+  for cloud sdk installation  - 
+  # *Refer link -https://cloud.google.com/sdk/install
+
 3. All required Google Cloud APIs enabled
+
+> gcloud components update
+> gcloud auth login
+> gcloud config set project <my-project>
+> gcloud config list
   
+4.Make sure you have update version of terraform installed terraform 12.28
+# *Refer link - https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+
+   1.Download the file and Unzip it
+
+   2.For Linux servers - Move the file to /usr/local/bin
+  
+5.Remove the hidden files in terraform folder like .terrform
 
 # VPC and Subnets for GKE and Cloud SQL
 
@@ -14,8 +30,10 @@ This script configures a single simple VPC with subnets with secondary ranges in
 This VPC has three subnets, with the first subnet being given two secondary
 ranges.
 
-#Subtitution of values in .tfvars file 
+# Subtitution of values in .tfvars file 
+
 we have to move to the config directory and we have make changes in .tfvars file 
+
 Here we have production.tfvars and prod-backend.tfvars
 
 <!-- Values for production.tfvars file -->
@@ -43,6 +61,18 @@ Here we have production.tfvars and prod-backend.tfvars
 | bucket | The name of the Gcs bucket to store the tfstatefile | string | n/a | yes |
 | prefix | The prefix or path of the file to be store in the gcs bucket| string | n/a | yes |
 
+<!--TERRAFORM execution commands-->
+
+## terraform execution commands
+*comeback to the main directory and execute the below commands*
+
+1.apply terraform init - terraform init -var-file=config/production.tfvars -backend-config=config/prod-backend.tfvars
+
+2.apply terraform plan - terraform plan -var-file=config/production.tfvars -var-file=config/prod-backend.tfvars
+
+3.apply terraform apply - terraform apply -var-file=config/production.tfvars -var-file=config/prod-backend.tfvars
+
+
 ## Outputs
 
 | Name | Description |
@@ -59,3 +89,5 @@ Here we have production.tfvars and prod-backend.tfvars
 | subnets\_secondary\_ranges | The secondary ranges associated with these subnets |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+
