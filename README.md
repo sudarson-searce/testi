@@ -4,8 +4,8 @@ You’ll need the following:
 1.A GCP project
 
 2.gcloud installed, up-to-date, logged in, and connected to your project.
-  for cloud sdk installation  - 
-  *Refer link -https://cloud.google.com/sdk/install
+  
+  for cloud sdk installation  - *Refer link -https://cloud.google.com/sdk/install
 
 3. All required Google Cloud APIs enabled
 
